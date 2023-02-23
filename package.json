@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js -e js,hbs",
+    "education-seed": "node seeds/Education.js"
+    
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
+    "mongoose": "^6.10.0",
     "nodemon": "^2.0.15"
   }
 }
