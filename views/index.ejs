@@ -34,6 +34,40 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<style>
+  /* CSS */
+.button-1 {
+  background-color: #4cc4ea;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #F082AC;
+}
+</style>
 
 <body>
 
@@ -85,7 +119,7 @@
 
         <div class="section-title">
           <h2>About</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>I am outgoing, dedicated, and open-minded. I get across to people and adjust to changes with ease. I believe that a person should work on developing their professional skills and learning new things all the time. Currently, I am looking for new career opportunities my current job position cannot provide.</p>
         </div>
 
         <div class="row">
@@ -125,7 +159,8 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section>
+    <!-- End About Section -->
 
     <!-- ======= Facts Section ======= -->
     <!-- <section id="facts" class="facts">
@@ -240,14 +275,16 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Resume</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Resume</h2><a href="resume.pdf" dowjn><button class="button-1" id="down"> Resume Downlaod</button></a>
+          <p>Having probably year of work experience looking forward to shift wherein I can utilize
+            my experience with respect to Project Management and development in contributing effectively to success of the organization and also for further improvement of my personal
+            and professional skills.</p>
         </div>
 
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up">
             <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
+            <!-- <div class="resume-item pb-0">
               <h4>Alex Smith</h4>
               <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
               <ul>
@@ -255,7 +292,7 @@
                 <li>(123) 456-7891</li>
                 <li>alice.barkley@example.com</li>
               </ul>
-            </div>
+            </div> -->
 
             <h3 class="resume-title">Education</h3>
 
@@ -277,29 +314,22 @@
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Senior graphic design specialist</h4>
-              <h5>2019 - Present</h5>
-              <p><em>Experion, New York, NY </em></p>
-              <ul>
-                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Graphic design specialist</h4>
-              <h5>2017 - 2018</h5>
-              <p><em>Stepping Stone Advertising, New York, NY</em></p>
-              <ul>
-                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-              </ul>
-            </div>
+            <% for (let index = 0; index < dataOfCompany.length; index++) { const element = dataOfCompany[index]; %>
+                <div class="resume-item">
+                  <h4><%- element.desgination %></h4>
+                  <h5><%- element.startYear %> - <%- ((element.endYear == "")?"Present":element.endYear) %></h5>
+                  <p><em><%- element.companyName %> </em></p>
+                  <ul>
+                    <% element.description.forEach(element => { %>
+                      <li>
+                        <%- element %>
+                      </li>
+                    <% }); %>
+                  </ul>
+                </div>
+            <% } %>
           </div>
+        
         </div>
 
       </div>
@@ -311,7 +341,7 @@
 
         <div class="section-title">
           <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Here's the some project which has been done in my carrer</p>
         </div>
 
         <div class="row" data-aos="fade-up">
@@ -564,11 +594,11 @@
 
           <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info">
-              <div class="address">
+              <!-- <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
                 <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
+              </div> -->
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
@@ -576,11 +606,11 @@
                 <p>info@example.com</p>
               </div>
 
-              <div class="phone">
+              <!-- <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
                 <p>+1 5589 55488 55s</p>
-              </div>
+              </div> -->
 
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58871.38738777927!2d88.22114843034153!3d22.748240483591278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f8867a9a4cc759%3A0xf571a4be1c9fd044!2sBaruipara%20Vegetable%20Market!5e0!3m2!1sen!2sin!4v1677176432166!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -655,7 +685,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </body>
 
 </html>

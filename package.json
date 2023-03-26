@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js -e js,hbs",
-    "education-seed": "node seeds/Education.js"
+    "education-seed": "node seeds/Education.js", 
+    "company-seed":"node seeds/companySeed.js"
     
   },
   "author": "",

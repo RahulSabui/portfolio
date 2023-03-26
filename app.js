@@ -4,6 +4,7 @@ require('dotenv').config()
 
 require("./db/conn")
 const EducationModel = require("./model/Details")
+const CompanyModel = require("./model/Company")
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -13,9 +14,10 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', async (req, res) =>{
 
     const dataOfEducation = await EducationModel.find()
-    console.log(dataOfEducation);
+    const dataOfCompany = await CompanyModel.find()
 
-    res.render('index', {dataOfEducation:dataOfEducation})
+
+    res.render('index', {dataOfEducation:dataOfEducation,dataOfCompany:dataOfCompany})
 })
 
 app.listen(3000, () => {
